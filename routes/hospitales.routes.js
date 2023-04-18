@@ -23,7 +23,12 @@ router.post( '/',
         validarCampos
     ], crearHospitales)
 
-router.put( '/:id',[ ],     actualizarHospitales,
+router.put( '/:id',[
+    validarJWT,
+    check('nombre', 'El nombre del hospital es necesario').not().isEmpty(),
+    validarCampos
+ ],     
+ actualizarHospitales,
 )
 
 router.delete( '/:id', validarJWT, borrarHospitales)
