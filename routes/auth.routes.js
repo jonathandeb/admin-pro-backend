@@ -1,4 +1,4 @@
-'/api/login'
+// '/api/login'
 const {Router} = require('express');
 const { check } = require('express-validator');
 const { login, googleSignIn, renewToken } = require('../controllers/auth.controller');
